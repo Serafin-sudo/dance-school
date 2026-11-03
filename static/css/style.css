@@ -1,0 +1,83 @@
+/* --- BASE --- */
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+body > header {
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    background: #ffffff;
+    border-bottom: 1px solid #ddd;
+}
+
+body > header nav {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    padding: 0.5rem 1rem;
+}
+
+body > main {
+    flex: 1;
+}
+
+body > footer {
+    background: #ffffff;
+    border-top: 1px solid #ddd;
+    padding: 1rem;
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+}
+
+body > footer p {
+    margin: 0;
+}
+
+/* --- PAGINE HOME E ABOUT --- */
+
+.page-title {
+    margin-bottom: 1.5rem;
+}
+
+.layout {
+    display: flex;
+    gap: 2rem;
+    align-items: flex-start;
+}
+
+.main-text {
+    flex: 3;
+}
+
+.side-info {
+    flex: 1;
+    padding: 1rem;
+    border: 1px solid #ccc;
+}
+
+.side-photo {
+    flex: 1;
+    margin: 0;
+}
+
+.side-photo img {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+@media (max-width: 700px) {
+    .layout {
+        flex-direction: column;
+    }
+}
