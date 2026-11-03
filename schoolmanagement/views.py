@@ -1,3 +1,11 @@
 from django.shortcuts import render
+from django.views.generic import DetailView, ListView
+from .models import School
 
-# Create your views here.
+
+class SchoolDetailView(DetailView):
+    model = School
+
+
+class SchoolListView(ListView):
+    model = School
