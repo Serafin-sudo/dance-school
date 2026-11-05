@@ -15,7 +15,7 @@
             <td>{{ object.street }}</td>
             <td>{{ object.phone }}</td>
             <td>{{ object.email }}</td>
-            <td><a href="{% url 'schoolmanagement:school-detail' object.id %}">mostra</a></td>
+            <td><a href="{% url 'scuola' object.id %}">mostra</a></td>
         </tr>
     {% endfor %}
 {% endblock %}

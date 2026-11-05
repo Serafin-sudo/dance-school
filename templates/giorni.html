@@ -1,0 +1,24 @@
+{% extends "base.html" %}
+{% load static %}
+{% block title %}Giorni{% endblock %}
+
+{% block content %}
+<div>
+    <h1>Giorni</h1>
+    <ul>
+        {% for giorno in giorni %}
+        <li>
+            <div>
+                <strong>{{ giorno.name }}</strong> 
+                <br><small>N°: {{ giorno.number }}</small>
+            </div>
+            <div>
+                <a href="cipensodopo">Modifica Giorno</a>
+            </div>
+        </li>
+        {% empty %}
+        <li>No giorni trovati</li>
+        {% endfor %}
+    </ul>
+</div>
+{% endblock %}

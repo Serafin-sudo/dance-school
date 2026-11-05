@@ -25,4 +25,7 @@ urlpatterns = [
     path(route='',  view=views.test_view, name='test'),
     path('schools/', include('schoolmanagement.urls'), name='schools'),
     path('school/', include('school.urls'), name='school'),
+    path('aule/', view=views.lista_aule, name='aule'),
+    path('giorni/', view=views.lista_giorni, name='giorni'),
+    path('corsi/', view=views.lista_corsi, name='corsi'),
 ]

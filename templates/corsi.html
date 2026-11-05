@@ -1,0 +1,26 @@
+{% extends "base.html" %}
+{% load static %}
+{% block title %}Corsi{% endblock %}
+
+{% block content %}
+<div>
+    <h1>Corsi</h1>
+    <ul>
+        {% for corso in corsi %}
+        <li>
+            <div>
+                <strong>{{ corso.subject }}</strong> 
+                <br><small>Aula: {{ corso.classroom.name }}</small>
+                <br><small>Giorno: {{ corso.day_of_the_week.name }}</small>
+                <br><small>Orario di inizio: {{ corso.starting_hour }}</small>
+            </div>
+            <div>
+                <a href="cipensodopo">Modifica Corso</a>
+            </div>
+        </li>
+        {% empty %}
+        <li>No corsi trovati</li>
+        {% endfor %}
+    </ul>
+</div>
+{% endblock %}

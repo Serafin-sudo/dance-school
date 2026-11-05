@@ -3,21 +3,40 @@
 {% block title %}{{ object.name }}{% endblock %}
 
 {% block content %}
+<div>
+    <header>
+        <h1>{{ object.name }}</h1>
+    </header>
 
-<header>
-    <h1>{{ object.name }}</h1>
-</header>
+    <ul>
+        <li><strong>Via:</strong> {{ object.street }}</li>
+        <li><strong>Città:</strong> {{ object.city }}</li>
+        <li><strong>Provincia:</strong> {{ object.province }}</li>
+        <li><strong>CAP:</strong> {{ object.zip }}</li>
+        <li><strong>Paese:</strong> {{ object.country }}</li>
+        <li><strong>Sito web:</strong> {{ object.website }}</li>
+        <li><strong>Telefono:</strong> {{ object.phone }}</li>
+        <li><strong>Email:</strong> {{ object.email }}</li>
+        <li><strong>P.IVA:</strong> {{ object.vat }}</li>
+    </ul>
 
-<ul>
-    <li><strong>Via:</strong> {{ object.street }}</li>
-    <li><strong>Città:</strong> {{ object.city }}</li>
-    <li><strong>Provincia:</strong> {{ object.province }}</li>
-    <li><strong>CAP:</strong> {{ object.zip }}</li>
-    <li><strong>Paese:</strong> {{ object.country }}</li>
-    <li><strong>Sito web:</strong> {{ object.website }}</li>
-    <li><strong>Telefono:</strong> {{ object.phone }}</li>
-    <li><strong>Email:</strong> {{ object.email }}</li>
-    <li><strong>P.IVA:</strong> {{ object.vat }}</li>
-</ul>
-
+    {% block detail-content %}
+    <h2>Corsi</h2>
+    <ul>
+        {% for corso in corsi %}
+        <li>
+            <div>
+                <strong>{{ corso.subject }}</strong> 
+                <br><small>Aula: {{ corso.classroom.name }} | Giorno: {{ corso.day_of_the_week.name }} | Orario: {{ corso.starting_hour }}</small>
+            </div>
+            <div>
+                <a href="cipensodopo">Modifica Corso</a>
+            </div>
+        </li>
+        {% empty %}
+        <li>Questa scuola non ha corsi</li>
+        {% endfor %}
+    </ul>
+    {% endblock %}
+</div>
 {% endblock %}

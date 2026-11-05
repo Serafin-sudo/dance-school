@@ -1,0 +1,24 @@
+{% extends "base.html" %}
+{% load static %}
+{% block title %}Aule{% endblock %}
+
+{% block content %}
+<div>
+    <h1>Aule</h1>
+    <ul>
+        {% for aula in aule %}
+        <li>
+            <div>
+                <strong>{{ aula.name }}</strong> 
+                <br><small>Capacità: {{ aula.capacity }}</small>
+            </div>
+            <div>
+                <a href="cipensodopo">Modifica Aula</a>
+            </div>
+        </li>
+        {% empty %}
+        <li>No aule trovate</li>
+        {% endfor %}
+    </ul>
+</div>
+{% endblock %}
