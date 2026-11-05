@@ -5,6 +5,7 @@
     <th>Via</th>
     <th>Telefono</th>
     <th>Email</th>
+    <th>Dettagli</th>
 {% endblock %}
 
 {% block list-body %}
@@ -14,6 +15,7 @@
             <td>{{ object.street }}</td>
             <td>{{ object.phone }}</td>
             <td>{{ object.email }}</td>
+            <td><a href="{% url 'schoolmanagement:school-detail' object.id %}">mostra</a></td>
         </tr>
     {% endfor %}
 {% endblock %}

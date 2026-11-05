@@ -23,5 +23,6 @@ urlpatterns = [
     path('about/', view=views.about, name='about'),
     path('admin/', admin.site.urls),
     path(route='',  view=views.test_view, name='test'),
-    path('schools/', include('schoolmanagement.urls')),
+    path('schools/', include('schoolmanagement.urls'), name='schools'),
+    path('school/', include('school.urls'), name='school'),
 ]
