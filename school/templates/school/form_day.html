@@ -1,0 +1,21 @@
+{% extends "base_list.html" %}
+
+{% block title %}Modifica Giorno{% endblock %}
+
+{% block content %}
+<div>
+    <form method="POST" action="">
+        {% csrf_token %}
+        <header class="modal-header">
+            <h5>Modifica Giorno {{ object.name }}</h5>
+        </header>
+        <div class="modal-body">
+            {{ form.as_p }}
+        </div>
+        <footer class="modal-footer">
+            <a href="{% url 'giorni' %}">Indietro</a>
+            <button type="submit">Conferma</button>
+        </footer>
+    </form>
+</div>
+{% endblock %}

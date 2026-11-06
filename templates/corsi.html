@@ -15,7 +15,7 @@
                 <br><small>Orario di inizio: {{ corso.starting_hour }}</small>
             </div>
             <div>
-                <a href="cipensodopo">Modifica Corso</a>
+                <a href="{% url 'modifica-corso' corso.pk %}">Modifica Corso</a>
             </div>
         </li>
         {% empty %}

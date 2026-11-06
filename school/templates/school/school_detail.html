@@ -30,7 +30,7 @@
                 <br><small>Aula: {{ corso.classroom.name }} | Giorno: {{ corso.day_of_the_week.name }} | Orario: {{ corso.starting_hour }}</small>
             </div>
             <div>
-                <a href="cipensodopo">Modifica Corso</a>
+                <a href="{% url 'modifica-corso' corso.pk %}">Modifica Corso</a>
             </div>
         </li>
         {% empty %}

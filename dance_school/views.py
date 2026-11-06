@@ -1,4 +1,4 @@
-from django.http import HttpResponse
+from django.http import HttpResponse, JsonResponse
 from django.shortcuts import render
 from school.models import Classroom
 from school.models import Course
@@ -35,3 +35,10 @@ def lista_giorni(request):
 def lista_corsi(request):
     corsi = Course.objects.all()
     return render(request, "corsi.html", {"corsi": corsi})
+
+def api_example(request):
+    data = {
+        "name": "Allessandro",
+        "email": "ale@mail.com"
+    }
+    return JsonResponse(data)

@@ -13,7 +13,7 @@
                 <br><small>N°: {{ giorno.number }}</small>
             </div>
             <div>
-                <a href="cipensodopo">Modifica Giorno</a>
+                <a href="{% url 'modifica-giorno' giorno.pk %}">Modifica Giorno</a>
             </div>
         </li>
         {% empty %}

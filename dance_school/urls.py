@@ -28,4 +28,5 @@ urlpatterns = [
     path('aule/', view=views.lista_aule, name='aule'),
     path('giorni/', view=views.lista_giorni, name='giorni'),
     path('corsi/', view=views.lista_corsi, name='corsi'),
+    path('api/v1/example', views.api_example, name='api_example')
 ]

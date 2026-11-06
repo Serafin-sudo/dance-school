@@ -13,7 +13,7 @@
                 <br><small>Capacità: {{ aula.capacity }}</small>
             </div>
             <div>
-                <a href="cipensodopo">Modifica Aula</a>
+                <a href="{% url 'modifica-aula' aula.pk %}">Modifica Aula</a>
             </div>
         </li>
         {% empty %}

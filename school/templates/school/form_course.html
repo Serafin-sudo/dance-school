@@ -1,0 +1,22 @@
+{% extends "base_list.html" %}
+
+{% block title %}Modifica Corso{% endblock %}
+
+{% block content %}
+<div>
+    <form method="POST" action="">
+        {% csrf_token %}
+        <header class="modal-header">
+            <h5>Modifica Corso {{ object.name }}</h5>
+        </header>
+        <div class="modal-body">
+            {{ form.as_p }}
+        </div>
+        <footer class="modal-footer">
+            <a href="{% url 'corsi' %}">Indietro</a>
+            <button type="submit">Conferma</button>
+        </footer>
+        </footer>
+    </form>
+</div>
+{% endblock %}
