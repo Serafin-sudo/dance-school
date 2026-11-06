@@ -1,8 +1,8 @@
+from django.views.generic import UpdateView, CreateView, DeleteView
+from school.models import Course, Classroom, DayOfTheWeek
 from django.shortcuts import render, get_object_or_404
 from schoolmanagement.models import School
-from django.views.generic import UpdateView, CreateView
 from django.urls import reverse_lazy
-from school.models import Course, Classroom, DayOfTheWeek
 
 def scuola(request, pk):
     scuola = get_object_or_404(School, pk=pk)
@@ -27,6 +27,11 @@ class CourseUpdateView(UpdateView):
     template_name = "school/form_course.html"
     success_url = reverse_lazy("corsi")
 
+class CourseDeleteView(DeleteView):
+    model = Course
+    template_name = "school/confirm_delete_course.html"
+    success_url = reverse_lazy("corsi")
+
 # aula
 class ClassroomCreateView(CreateView):
     model = Classroom
@@ -39,7 +44,11 @@ class ClassroomUpdateView(UpdateView):
     fields = ["name", "capacity"]
     template_name = "school/form_classroom.html"
     success_url = reverse_lazy("aule")
-
+    
+class ClassroomDeleteView(DeleteView):
+    model = Classroom
+    template_name = "school/confirm_delete_classroom.html"
+    success_url = reverse_lazy("aule")
 
 # giorno della settimana
 class DayCreateView(CreateView):
@@ -52,4 +61,9 @@ class DayUpdateView(UpdateView):
     model = DayOfTheWeek
     fields = ["number", "name"]
     template_name = "school/form_day.html"
+    success_url = reverse_lazy("giorni")
+    
+class DayDeleteView(DeleteView):
+    model = DayOfTheWeek
+    template_name = "school/confirm_delete_day.html"
     success_url = reverse_lazy("giorni")

@@ -8,6 +8,9 @@
 <div class="container mt-4" style="max-width: 600px;">
     <h2>{% if form.instance.pk %}Modifica Aula: {{ form.instance.subject }}{% else %}Inserisci un Nuova Aula{% endif %}</h2>
     <hr>
+    {% if form.instance.pk %}
+        <a href="{% url 'elimina-aula' form.instance.pk %}">Elimina Aula</a>
+    {% endif %}
 
     <form method="post" class="needs-validation" novalidate>
         {% csrf_token %}

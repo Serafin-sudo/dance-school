@@ -1,0 +1,16 @@
+{% extends "base.html" %}
+
+{% block title %}Elimina Corso?{% endblock %}
+
+{% block content %}
+<div>
+    <h1>Elimina Corso</h1>
+    <p>Sei sicuro di voler eliminare il corso <strong>{{ object.name }}</strong>? L'operazione è irreversibile</p>
+
+    <form method="POST" action="">
+        {% csrf_token %}
+        <a href="javascript:history.back()" class="btn btn-secondary">Indietro</a>
+        <button type="submit">Conferma</button>
+    </form>
+</div>
+{% endblock %}

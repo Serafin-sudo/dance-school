@@ -8,6 +8,9 @@
 <div class="container mt-4" style="max-width: 600px;">
     <h2>{% if form.instance.pk %}Modifica Giorno: {{ form.instance.subject }}{% else %}Inserisci un Nuovo Giorno{% endif %}</h2>
     <hr>
+    {% if form.instance.pk %}
+        <a href="{% url 'elimina-giorno' form.instance.pk %}">Elimina Giorno</a>
+    {% endif %}
 
     <form method="post" class="needs-validation" novalidate>
         {% csrf_token %}
