@@ -81,3 +81,118 @@ body > footer p {
         flex-direction: column;
     }
 }
+
+/* --- ROBA --- */
+
+.container {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 2rem 1rem;
+    text-align: center;
+}
+
+
+.container > div {
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.mt-4 {
+    margin-top: 1rem;
+}
+
+/* --- LISTE --- */
+
+.container ul {
+    list-style: none;
+    padding: 0;
+    margin: 1rem 0;
+}
+
+.container li {
+    padding: 0.75rem 1rem;
+    margin-bottom: 0.5rem;
+    border: 1px solid #ddd;
+}
+
+.container li > div + div {
+    margin-top: 0.5rem;
+}
+
+/* --- TABELLE --- */
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 1rem 0;
+}
+
+th, td {
+    padding: 0.5rem 0.75rem;
+    border: 1px solid #ddd;
+    text-align: center;
+}
+
+/* --- FORM --- */
+
+form p {
+    margin: 0 0 1rem;
+}
+
+form label {
+    display: block;
+    margin-bottom: 0.25rem;
+}
+
+form input,
+form select {
+    width: 100%;
+    max-width: 400px;
+    padding: 0.4rem;
+}
+
+dialog {
+    margin: auto;
+    padding: 1rem;
+}
+
+.modal-header,
+.modal-footer {
+    margin: 1rem 0;
+}
+
+/* --- LINK / BOTTONI --- */
+
+a,
+button {
+    display: inline-block;
+    padding: 0.4rem 0.9rem;
+    border: 1px solid #999;
+    background: #f5f5f5;
+    color: inherit;
+    font: inherit;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+a:hover,
+button:hover {
+    background: #e5e5e5;
+}
+
+body > header nav a,
+body > header nav button {
+    margin: 0;
+}
+
+body > header nav a:has(img) {
+    padding: 0;
+    border: none;
+    background: none;
+}
+
+.container li a + a,
+.container form a + button,
+.modal-footer button + button {
+    margin-left: 0.5rem;
+}
