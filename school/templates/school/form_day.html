@@ -1,21 +1,22 @@
 {% extends "base_list.html" %}
 
-{% block title %}Modifica Giorno{% endblock %}
+{% block title %}
+    {% if form.instance.pk %}Modifica Giorno{% else %}Crea Nuovo Giorno{% endif %}
+{% endblock %}
 
 {% block content %}
-<div>
-    <form method="POST" action="">
+<div class="container mt-4" style="max-width: 600px;">
+    <h2>{% if form.instance.pk %}Modifica Giorno: {{ form.instance.subject }}{% else %}Inserisci un Nuovo Giorno{% endif %}</h2>
+    <hr>
+
+    <form method="post" class="needs-validation" novalidate>
         {% csrf_token %}
-        <header class="modal-header">
-            <h5>Modifica Giorno {{ object.name }}</h5>
-        </header>
-        <div class="modal-body">
-            {{ form.as_p }}
+        {{ form.as_p }}
+
+        <div class="mt-4">
+            <button type="submit" class="btn btn-primary">Salva Giorno</button>
+            <a href="javascript:history.back()" class="btn btn-secondary">Indietro</a>
         </div>
-        <footer class="modal-footer">
-            <a href="{% url 'giorni' %}">Indietro</a>
-            <button type="submit">Conferma</button>
-        </footer>
     </form>
 </div>
 {% endblock %}

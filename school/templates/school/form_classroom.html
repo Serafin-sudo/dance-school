@@ -1,21 +1,22 @@
-{% extends "base.html" %}
+{% extends "base_list.html" %}
 
-{% block title %}Modifica Aula{% endblock %}
+{% block title %}
+    {% if form.instance.pk %}Modifica Aula{% else %}Crea Nuova Aula{% endif %}
+{% endblock %}
 
 {% block content %}
-<div>
-    <form method="POST" action="">
+<div class="container mt-4" style="max-width: 600px;">
+    <h2>{% if form.instance.pk %}Modifica Aula: {{ form.instance.subject }}{% else %}Inserisci un Nuova Aula{% endif %}</h2>
+    <hr>
+
+    <form method="post" class="needs-validation" novalidate>
         {% csrf_token %}
-        <header class="modal-header">
-            <h5>Modifica Aula {{ object.name }}</h5>
-        </header>
-        <div class="modal-body">
-            {{ form.as_p }}
+        {{ form.as_p }}
+
+        <div class="mt-4">
+            <button type="submit" class="btn btn-primary">Salva Aula</button>
+            <a href="javascript:history.back()" class="btn btn-secondary">Indietro</a>
         </div>
-        <footer class="modal-footer">
-            <a href="{% url 'aule' %}">Indietro</a>
-            <button type="submit">Conferma</button>
-        </footer>
     </form>
 </div>
 {% endblock %}
